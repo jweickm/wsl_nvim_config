@@ -54,7 +54,7 @@ call plug#end()
 " }}}
 
 " SETTINGS ----------------------------------------- {{{
-set relativenumber
+set number relativenumber
 filetype plugin indent on
 
 set autoindent
@@ -63,6 +63,9 @@ set shiftwidth=4
 set smarttab
 set softtabstop=4
 set expandtab
+
+set splitbelow
+set splitright
 
 set mouse=a
 set scrolloff=20
@@ -86,8 +89,8 @@ let mapleader = " "
 
 " Map easymotion to only leader (after setting the mapleader!)
 map <Leader> <Plug>(easymotion-prefix)
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+" map  <Leader>f <Plug>(easymotion-bd-f)
+" nmap <Leader>f <Plug>(easymotion-overwin-f)
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
