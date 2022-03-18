@@ -41,7 +41,9 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 " Easymotion plug
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
+
 " Make Easymotion work with dot repeat
 Plug 'tpope/vim-repeat'
 
@@ -97,15 +99,24 @@ set history=1000
 " Set the space as the leader key. Must be set before other leader key combos!
 let mapleader = " "
 
-" Map easymotion to only leader (after setting the mapleader!)
-map <Leader> <Plug>(easymotion-prefix)
-" map  <Leader>f <Plug>(easymotion-bd-f)
-" nmap <Leader>f <Plug>(easymotion-overwin-f)
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+" " Map easymotion to only leader (after setting the mapleader!)
+" map <Leader> <Plug>(easymotion-prefix)
+" " map  <Leader>f <Plug>(easymotion-bd-f)
+" " nmap <Leader>f <Plug>(easymotion-overwin-f)
+" map <Leader>L <Plug>(easymotion-bd-jk)
+" nmap <Leader>L <Plug>(easymotion-overwin-line)
+" " Move to word
+" map  <Leader>w <Plug>(easymotion-bd-w)
+" nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" HOP EASYMOTION
+" setup and use colemak keys
+lua require'hop'.setup { keys = 'arstdwfpluyhneio', jump_on_sole_occurence = false }
+map <Leader>f :HopChar1<CR>
+map <Leader>s :HopChar2<CR>
+map <Leader>w :HopWord<CR>
+map <Leader>l :HopLine<CR>
+map <Leader>h :HopLineStart<CR>
 
 " open nerdtree with F1
 nnoremap <F1> :NERDTreeToggle<CR>
